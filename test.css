@@ -1,0 +1,11 @@
+.blue {
+  color:blue;
+}
+
+.souligne {
+  text-decoration: line-through;
+}
+
+.changeBG {
+  background-color: "blue";
+}

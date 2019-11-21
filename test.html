@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <title></title>
+  </head>
+  <body>
+    <h1 onmouseover="color()">Test</h1>
+    <input type="Button" id = "background" name="" value="plop" onclick="changerbackground()" >
+    <script type="text/javascript">
+      function changerbackground(){
+        document.body.style.background = "blue";
+      }
+      function color(){
+        let r = Math.floor(Math.random()*(255-0)-0).toString();
+        let g = Math.floor(Math.random()*(255-0)-0).toString();
+        let b = Math.floor(Math.random()*(255-0)-0).toString();
+        let c = "rgb("+r+","+g+","+b+")";
+        document.body.style.background = c;
+      }
+
+    </script>
+  </body>
+</html>

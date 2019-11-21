@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8"/>
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Exercices 3</h1>
+    </header>
+          <p id="p1"> paragraphe à masquer ...</p>
+          <ul>
+            <li> <a href="l1">liens1</a> </li>
+            <li> <a href="l2">liens2</a> </li>
+            <li> <a href="l3">liens3</a> </li>
+            <li> <a href="l4">liens4</a> </li>
+            <li> <a href="l5">liens5</a> </li>
+          </ul>
+    <input type="button" id = "bt" value="Masquer" onclick="cache()"/>
+    <input type="checkbox" id = "bt_color" value="couleur" onclick="color()">
+    <input type="button" id = "recup" value="recupliens" onclick="recup_a()">
+    <input type="button" id = "affichelien" value="affich" onclick="affiche()">
+    <img id = "image"src="https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png" alt="" onclick="change_image()">
+    <script type="text/javascript">
+        function change_image(){
+          const img = document.getElementById('image');
+          console.log(img.src);
+          if (img.src=="https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png"){
+            img.src = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png";
+          }
+          else{
+          img.src="https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png";
+        }
+        }
+
+        function cache(){
+          const pp = document.getElementById('p1');
+          const b = document.getElementById('bt');
+          if (pp.hidden){
+            b.value="Cacher";
+            pp.hidden=false;
+
+          }
+          else{
+            b.value="Afficher";
+            pp.hidden=true;
+          }
+        }
+        function color(){
+          let r = Math.floor(Math.random()*(255-0)-0).toString();
+          let g = Math.floor(Math.random()*(255-0)-0).toString();
+          let b = Math.floor(Math.random()*(255-0)-0).toString();
+          let c = "rgb("+r+","+g+","+b+")";
+          document.body.style.background = c;
+        }
+
+        function recup_a(){
+          let lien = document.getElementsByTagName('a');
+          console.log(lien);
+          return lien
+        }
+
+
+        function affiche(){
+          let liens = recup_a();
+          for (let i = 0;i < liens.length;i++){
+            console.log(typeof(liens[i]));
+            console.log(liens[i]);
+          }
+        }
+
+
+    </script>
+  </body>
+</html>
